@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta name="viewport" content="width=device-width", initial-scale="1.0">
+            <title>RU Aware</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <div id="map"></div>
+    
+
+        <label for="Alert" id = AlertLabel>Alert:</label>
+        <input type="text" id="Alert" alert="Alert" placeholder="">
+
+        <!--Displays user's current location-->
+        <script>
+            navigator.geolocation.getCurrentPosition(position => {
+                const { latitude, longitude } = position.coords;
+
+                map.innerHTML = '<iframe width="50%" height="780" src="https:/maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
+                
+                
+
+            });
+        </script>
+    </html>
